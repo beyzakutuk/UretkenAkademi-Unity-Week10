@@ -27,6 +27,8 @@ public class DroneController : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, Mathf.Atan2(x, y) * Mathf.Rad2Deg, transform.eulerAngles.z);
         }
+
+        rigidbody.AddForce(Vector3.up * -Physics.gravity.y * rigidbody.mass);
     }
 
     private void OnEnable()
